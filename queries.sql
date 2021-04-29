@@ -46,3 +46,10 @@ SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 		JOIN departments AS d
 		ON de.dept_no = d.dept_no
 		WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development';
+
+-- search 8: list the frequency count of employee last names
+-- descending order
+SELECT last_name, COUNT(last_name) AS last_name_count
+	FROM employees
+	GROUP BY last_name
+	ORDER BY last_name_count DESC;
